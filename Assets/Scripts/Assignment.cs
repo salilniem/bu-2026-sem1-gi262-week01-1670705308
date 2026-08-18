@@ -23,6 +23,20 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement logic to determine sign
         // Example: Debug.Log("Positive");
+        {
+            if (as01Number > 0)
+            {
+                Debug.Log("Positive");
+            }
+            else if (as01Number < 0)
+            {
+                Debug.Log("Negative");
+            }
+            else
+            {
+                Debug.Log("Zero");
+            }
+        }
         throw new System.NotImplementedException();
     }
 
@@ -31,6 +45,17 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement logic to return day name
         // Example: Debug.Log("Monday");
+        switch (as02Day)
+        {
+            case 1: Debug.Log("Monday"); break;
+            case 2: Debug.Log("Tuesday"); break;
+            case 3: Debug.Log("Wednesday"); break;
+            case 4: Debug.Log("Thursday"); break;
+            case 5: Debug.Log("Friday"); break;
+            case 6: Debug.Log("Saturday"); break;
+            case 7: Debug.Log("Sunday"); break;
+            default: Debug.Log("Invalid day"); break;
+        }
         throw new System.NotImplementedException();
     }
 
@@ -40,6 +65,14 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement password validation logic
         // Example: Debug.Log("True");
+        if (as03InputPassword == as03CorrectPassword)
+        {
+            Debug.Log("True");
+        }
+        else
+        {
+            Debug.Log("False");
+        }
         throw new System.NotImplementedException();
     }
 
@@ -48,6 +81,26 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement logic to return grade
         // Example: Debug.Log("A");
+        if (as04Score >= 80)
+        {
+            Debug.Log("A");
+        }
+        else if (as04Score >= 70)
+        {
+            Debug.Log("B");
+        }
+        else if (as04Score >= 60)
+        {
+            Debug.Log("C");
+        }
+        else if (as04Score >= 50)
+        {
+            Debug.Log("D");
+        }
+        else
+        {
+            Debug.Log("F");
+        }
         throw new System.NotImplementedException();
     }
 
@@ -56,6 +109,22 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement leap year check logic
         // Example: Debug.Log("True");
+        if (as05Year % 400 == 0)
+        {
+            Debug.Log("True");
+        }
+        else if (as05Year % 100 == 0)
+        {
+            Debug.Log("False");
+        }
+        else if (as05Year % 4 == 0)
+        {
+            Debug.Log("True");
+        }
+        else
+        {
+            Debug.Log("False");
+        }
         throw new System.NotImplementedException();
     }
 
@@ -66,6 +135,31 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement calculator logic
         // Example: Debug.Log("Result: 42");
+        switch (as06Op)
+        {
+            case '+':
+                Debug.Log($"Result: {as06Num1 + as06Num2}");
+                break;
+            case '-':
+                Debug.Log($"Result: {as06Num1 - as06Num2}");
+                break;
+            case '*':
+                Debug.Log($"Result: {as06Num1 * as06Num2}");
+                break;
+            case '/':
+                if (as06Num2 == 0)
+                {
+                    Debug.Log("Cannot divide by zero");
+                }
+                else
+                {
+                    Debug.Log($"Result: {as06Num1 / as06Num2}");
+                }
+                break;
+            default:
+                Debug.Log("wrong operator please use +, -, *, or /");
+                break;
+        }
         throw new System.NotImplementedException();
     }
 
@@ -74,6 +168,29 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Implement logic to return season
         // Example: Debug.Log("Summer");
+        if (as07Month >= 1 && as07Month <= 12)
+        {
+            if (as07Month == 12 || as07Month == 1 || as07Month == 2)
+            {
+                Debug.Log("It's Winter.");
+            }
+            else if (as07Month >= 3 && as07Month <= 5)
+            {
+                Debug.Log("It's Spring.");
+            }
+            else if (as07Month >= 6 && as07Month <= 8)
+            {
+                Debug.Log("It's Summer.");
+            }
+            else
+            {
+                Debug.Log("It's Fall.");
+            }
+        }
+        else
+        {
+            Debug.Log("Invalid month number. Please enter a number between 1 and 12.");
+        }
         throw new System.NotImplementedException();
     }
 
@@ -82,6 +199,25 @@ public class Assignment : MonoBehaviour
     public int as08Payment;
     public void As08_PurchasingSystemExample()
     {
+        if (as08Quantity <= 0)
+        {
+            Debug.Log("สินค้าหมด");
+        }
+        else
+        {
+            if (as08Payment >= as08Price)
+            {
+                Debug.Log("คุณได้รับสินค้าแล้ว");
+                if (as08Payment > as08Price)
+                {
+                    Debug.Log($"คุณได้รับเงินทอน {as08Payment - as08Price} บาท");
+                }
+            }
+            else
+            {
+                Debug.Log("คุณมีเงินไม่พอ");
+            }
+        }
         throw new System.NotImplementedException();
     }
 
@@ -89,6 +225,26 @@ public class Assignment : MonoBehaviour
     public int as09ComputerChoice;
     public void As09_RockPaperScissorsExample()
     {
+        if (as09UserChoice < 0 || as09UserChoice > 2)
+        {
+            Debug.Log("กรุณาเลือกเป็นตัวเลขที่ถูกต้อง");
+            return;
+        }
+
+        if (as09UserChoice == as09ComputerChoice)
+        {
+            Debug.Log("เสมอ");
+        }
+        else if ((as09UserChoice == 0 && as09ComputerChoice == 2) ||
+                 (as09UserChoice == 1 && as09ComputerChoice == 0) ||
+                 (as09UserChoice == 2 && as09ComputerChoice == 1))
+        {
+            Debug.Log("คุณชนะ!");
+        }
+        else
+        {
+            Debug.Log("คุณแพ้!");
+        }
         throw new System.NotImplementedException();
     }
 
@@ -98,6 +254,20 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Add your implementation here
         // Example: Debug.Log("result as string");
+        double multiplier = 1.0;
+
+        switch (as10WeaponType?.ToLower())
+        {
+            case "sword": multiplier = 1.3; break;
+            case "axe": multiplier = 1.4; break;
+            case "bow": multiplier = 1.2; break;
+            case "staff": multiplier = 1.5; break;
+            case "dagger": multiplier = 1.1; break;
+            default: multiplier = 1.0; break;
+        }
+
+        int totalDamage = (int)(as10BaseDamage * multiplier);
+        Debug.Log(totalDamage.ToString());
         throw new System.NotImplementedException();
     }
 
@@ -107,6 +277,48 @@ public class Assignment : MonoBehaviour
     {
         // TODO: Add your implementation here
         // Example: Debug.Log("result as string");
+        if (as11Score < 0 || as11CompletionTime < 0)
+        {
+            Debug.Log("Invalid score or time");
+            return;
+        }
+
+        string rank;
+        int baseCoins;
+
+        if (as11Score >= 8000)
+        {
+            rank = "Gold";
+            baseCoins = 100;
+        }
+        else if (as11Score >= 6000)
+        {
+            rank = "Silver";
+            baseCoins = 75;
+        }
+        else if (as11Score >= 4000)
+        {
+            rank = "Bronze";
+            baseCoins = 50;
+        }
+        else
+        {
+            rank = "Participation";
+            baseCoins = 25;
+        }
+
+        int timeBonus = 0;
+        if (as11CompletionTime <= 30)
+        {
+            timeBonus = 25;
+        }
+        else if (as11CompletionTime <= 60)
+        {
+            timeBonus = 10;
+        }
+
+        int totalCoins = baseCoins + timeBonus;
+        Debug.Log($"{rank} Rank - {totalCoins} coins earned!");
         throw new System.NotImplementedException();
     }
 }
